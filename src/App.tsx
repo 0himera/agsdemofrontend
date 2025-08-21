@@ -36,22 +36,6 @@ function HeaderBar() {
             </Link>
           </nav>
         )}
-        {authed ? (
-          <button
-            className="px-3 py-1 rounded border hover:bg-neutral-50"
-            onClick={() => {
-              localStorage.removeItem('auth.email')
-              localStorage.removeItem('auth.password')
-              if (!STUB) navigate('/login', { replace: true })
-            }}
-          >
-            Выйти
-          </button>
-        ) : (
-          <Link to="/login" className="px-3 py-1 rounded border hover:bg-neutral-50">
-            Войти
-          </Link>
-        )}
       </div>
     </header>
   )
