@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/types.ts","./src/vite-env.d.ts","./src/api/books.ts","./src/api/emb.ts","./src/api/grader.ts","./src/components/examcard.tsx","./src/hooks/useexamprogress.ts","./src/pages/books.tsx","./src/pages/exams.tsx","./src/pages/login.tsx"],"version":"5.9.2"}
