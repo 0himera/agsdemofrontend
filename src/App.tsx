@@ -46,6 +46,15 @@ export default function App() {
   const authed = STUB || Boolean(localStorage.getItem('auth.email') && localStorage.getItem('auth.password'))
   const location = useLocation()
   const showHeader = location.pathname !== '/login'
+  const ExamStub = () => (
+    <div className="max-w-xl mx-auto mt-10 p-4 border rounded bg-neutral-50">
+      <h2 className="text-xl font-semibold mb-2">Заглушка: /#exam</h2>
+      <p className="text-sm text-neutral-700">
+        Страница отдельного экзамена пока не реализована. Перейдите в раздел
+        <Link className="ml-1 underline" to="/exams">“Экзамены”</Link>.
+      </p>
+    </div>
+  )
   return (
     <div className="min-h-screen p-6">
       {showHeader && <HeaderBar />}
@@ -53,6 +62,8 @@ export default function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/exams" element={<ExamsPage />} />
         <Route path="/books" element={<BooksPage />} />
+        {/* Заглушка для '#/exam' */}
+        <Route path="/exam" element={<ExamStub />} />
         <Route path="/" element={<Navigate to={authed ? '/exams' : '/login'} replace />} />
         <Route path="*" element={<Navigate to={authed ? '/exams' : '/login'} replace />} />
       </Routes>
